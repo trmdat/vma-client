@@ -119,7 +119,7 @@ const MedicinesListReadOnly = ({ setSelected }: any) => {
     try {
       if (value) {
         setFilterValue(value);
-        const response = await medicineService.getMedicineWithFilter(page, rowsPerPage, `name(${value})`);
+        const response = await medicineService.getMedicineWithFilter(page, rowsPerPage, `name(${value})`)
         if (response.isSuccess) {
           setMedicineList(response.data.data);
           setRowsPerPage(response.data.pageSize);
@@ -132,7 +132,7 @@ const MedicinesListReadOnly = ({ setSelected }: any) => {
       } else {
         setFilterValue("");
       }
-    } catch (e) {
+    }catch(e){
       setLoading(false);
       toast({
         variant: "destructive",
@@ -141,7 +141,7 @@ const MedicinesListReadOnly = ({ setSelected }: any) => {
     }
   }, []);
 
-  const onClear = React.useCallback(async () => {
+  const onClear = React.useCallback(async() => {
     fetchData();
   }, []);
 

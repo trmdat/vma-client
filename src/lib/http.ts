@@ -157,7 +157,7 @@ const http = {
     url: string,
     options?: Omit<CustomOptions, "body"> | undefined
   ) {
-    return request<Response>("GET", url, { ...options, allowCaching: true });
+    return request<Response>("GET", url, { ...options, allowCaching: options?.allowCaching === false ? false : true });
   },
   post<Response>(
     url: string,

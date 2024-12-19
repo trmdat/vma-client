@@ -43,7 +43,7 @@ import { useToast } from "@oursrc/hooks/use-toast";
 import { TbReportSearch } from "react-icons/tb";
 import { FaFileDownload } from "react-icons/fa";
 import { SERVERURL } from "@oursrc/lib/http";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const statusColorMap = [
   { status: "Chưa kết thúc", color: "warning" },
@@ -156,17 +156,17 @@ const Herd = () => {
     if (avgStatisticData) {
       setChartData([
         {
-          name: "Cân nặng",
+          name: 'Cân nặng',
           start: avgStatisticData.avgWeightInStart,
           end: avgStatisticData.avgWeightInEnd,
         },
         {
-          name: "Chiều cao",
+          name: 'Chiều cao',
           start: avgStatisticData.avgHeightInStart,
           end: avgStatisticData.avgHeightInEnd,
         },
         {
-          name: "Chiều rộng",
+          name: 'Chiều rộng',
           start: avgStatisticData.avgWidthInStart,
           end: avgStatisticData.avgWidthInEnd,
         },
@@ -271,17 +271,17 @@ const Herd = () => {
               <Tabs>
                 <Tab key="chart" title="Biểu đồ">
                   {avgStatisticData && chartData && (
-                    <ResponsiveContainer width="100%" height={400}>
-                      <BarChart data={chartData}>
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="name" />
-                        <YAxis />
-                        <Tooltip />
-                        <Legend />
-                        <Bar dataKey="start" name="Ban đầu" fill="#0070F0" />
-                        <Bar dataKey="end" name="Cuối cùng" fill="#17C964" />
-                      </BarChart>
-                    </ResponsiveContainer>
+                  <ResponsiveContainer width="100%" height={400}>
+                    <BarChart data={chartData}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                    <Bar dataKey="start" name="Ban đầu" fill="#0070F0" />
+                    <Bar dataKey="end" name="Cuối cùng" fill="#17C964" />
+                    </BarChart>
+                  </ResponsiveContainer>
                   )}
                 </Tab>
                 <Tab key="statistics" title="Thống kê">

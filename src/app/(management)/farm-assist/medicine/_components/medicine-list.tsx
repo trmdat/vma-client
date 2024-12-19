@@ -173,7 +173,7 @@ export default function MedicineList() {
     try {
       if (value) {
         setFilterValue(value);
-        const response = await medicineService.getMedicineWithFilter(page, rowsPerPage, `name(${value})`);
+        const response = await medicineService.getMedicineWithFilter(page, rowsPerPage, `name(${value})`)
         if (response.isSuccess) {
           setMedicineList(response.data.data);
           setRowsPerPage(response.data.pageSize);
@@ -186,7 +186,7 @@ export default function MedicineList() {
       } else {
         setFilterValue("");
       }
-    } catch (e) {
+    }catch(e){
       setLoading(false);
       toast({
         variant: "destructive",
